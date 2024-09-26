@@ -1,0 +1,139 @@
+
+/*  Import Font family in css*/
+
+
+
+
+:root{
+
+     --redColor: hsl(0, 78%, 62%);
+     --cyanColor: hsl(180, 62%, 55%);
+     --orangeColor: hsl(34, 97%, 64%);
+     --blueColor: hsl(212, 86%, 64%);
+     
+
+
+    --VeryDarkBlueColor: hsl(234, 12%, 34%);
+    --Grayis-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+body{
+height: auto;
+width: auto;
+Font-size: 15px;
+font-family: Poppins;
+background-color: var(--Very-Light-Gray);
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0px 40px 0px ;
+    text-align: center;
+}
+header h1{
+    font-size: 34px;
+    font-weight: 200;
+    margin: 0;
+    color: var(--Grayis-Blue);
+}
+header h2{
+    font-size: 34px;
+    font-weight: 600px;
+    margin: 0;
+    color: var(--VeryDarkBlueColor);
+}
+header p{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: var(--Grayis-Blue);
+}
+.cards{ 
+    margin: 0px 70px 40px 70px;
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(auto, 1fr);
+    grid-template-rows: repeat(4, 100px);
+    grid-template-areas: 
+    "   .           box2      ."
+    "   box1       box2      box3"
+    "   box1       box4      box3"
+    "   .           box4      ."
+    ;
+    gap: 26px;
+}
+.cards h2{
+    margin-bottom: 15px;
+}
+.box{
+    width: auto;
+    max-width: 1100px;
+    height: auto;
+    background-color:#fff;
+    border-radius: 10px;
+    padding:  30px;
+    box-shadow: 0px 0px 10px 0px var(--Grayis-Blue);
+    transition: translate .3s ease-in;
+}
+.box:hover{
+    translate: 0 -5px;
+}
+#box1{
+    grid-area: box1;
+    border-top: 4px solid var(--cyanColor);
+}
+#box2{
+    grid-area: box2;
+    border-top: 4px solid var(--redColor);
+}
+#box3{
+    grid-area: box4;
+    border-top: 4px solid var(--orangeColor);
+}
+#box4{
+    grid-area: box3;
+    border-top: 4px solid var(--blueColor);
+}
+.box h2 p{
+    font-size: 20px;
+    color: var(--VeryDarkBlueColor);
+    margin-bottom: 10px;
+}
+.box img{
+    display: block;
+    margin-left: auto;
+}
+footer{
+    background-color: var(--Very-Light-Gray);
+    box-shadow: 0px 5px 15px 1px var(--Grayis-Blue);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+}
+footer a{
+    color: var(--VeryDarkBlueColor);
+    text-decoration: none;
+    &:hover{
+        color: var(--orangeColor);
+    }
+}
+
+@media (max-width: 1010px) {
+    .cards{
+        grid-template: 
+        "box1"
+        "box2"
+        "box3"
+        "box4";
+    }
+}
+
